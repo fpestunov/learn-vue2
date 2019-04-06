@@ -6,25 +6,13 @@
 <body>
 
     <div id="root">
-        <h2>Vue.js Lists</h2>
-        <p>{{ foo }}</p>
-        First variant:
-        <ul>
-            <li v-for="name in names">{{ name }}</li>
-        </ul>
-
-        Second variant:
+        <h2>Vue Event Listeners</h2>
         <ul>
             <li v-for="name in names" v-text="name"></li>
         </ul>
 
-        <input type="text" id="input">
-        <button id="button">Add name</button>
-
-        <p>My links:</p>
-        <div v-for="link in urls">
-            <a :href="link">{{ link }}</a>
-        </div>
+        <input type="text" v-model="newName" @keyUp.Enter="addName">
+        <button @click="addName">Add name</button>
 
     </div>
 
@@ -34,17 +22,28 @@
         let app = new Vue({
             el: '#root',
             data: {
-                foo: 'bar',
+                newName: '',
                 names: ['John', 'Fred', 'Bill', 'Mary'],
-                urls: ['http://google.com', 'http://facebook.com']
-            }
+            },
+
+            methods: {
+                addName() {
+                    // alert('add name');
+
+                    this.names.push(this.newName);
+                    this.newName = '';
+                }
+            },
+
+            // mounted() {
+            //     document.querySelector('#button').addEventListener('click', () => {
+            //         let name = document.querySelector('#input').value;
+            //         app.names.push(name.value);
+            //         name.value = '';
+            //     });
+            // }
         });
 
-        document.querySelector('#button').addEventListener('click', () => {
-            let name = document.querySelector('#input').value;
-            app.names.push(name.value);
-            name.value = '';
-        });
         
         Vue.config.devtools = true;
     </script>

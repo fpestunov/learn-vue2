@@ -26,7 +26,7 @@ https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanh
 
 ## 3. Lists
 
-In real life, we're often working with arrays, rather than strings. In this episode, you'll learn how to use the v-for directive to filter through a list of items and render them on the page. We'll also continue our review of reactivity, in the process.
+In real life, we're often working with arrays, rather than strings. In this episode, you'll learn how to use the `v-for` directive to filter through a list of items and render them on the page. We'll also continue our review of reactivity, in the process.
 
 Проверим реактивность:
 - в консоле наберем `app.names.push('Susan')`, работает;
@@ -37,3 +37,11 @@ In real life, we're often working with arrays, rather than strings. In this epis
 
 Небольшой рефакторинг - перенос Jquery в экземпляр Vue.
 
+## 4. Vue Event Listeners
+
+In the previous episode, we defaulted to traditional event listeners and DOM traversal. Luckily, though, there's a simpler way with Vue. Let's review the `v-on` directive for registering event listeners.
+
+Справочник по обработке событий:
+https://ru.vuejs.org/v2/guide/events
+
+`v-on:` и `@`, выбираем последнее.
