@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div>
+        <h2>Classic JS data binding</h2>
+        Try to change text:<br>
+        <input type="text" id="msg">
+        <p>The value of the input is: <span id="el1"></span>.</p>
+    </div>
+
+    <div id="root">
+        <h2>Vue.js data binding</h2>
+        Try to change text:<br>
+        <input type="text" v-model="message">
+        <p>The value of the input is: {{ message }}.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        let data = {
+            message: 'Hello JS'
+        }
+
+        // first
+        document.querySelector('#msg').value = data.message;
+        document.getElementById("el1").innerHTML = data.message;
+
+        // second
+        new Vue({
+            el: '#root',
+            data: {
+                message: 'Hello Vue.js'
+            }
+        })
+    </script>
+</body>
+</html>
