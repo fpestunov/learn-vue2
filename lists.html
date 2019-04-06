@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 3. Vue Lists</title>
+</head>
+<body>
+
+    <div id="root">
+        <h2>Vue.js Lists</h2>
+        <p>{{ foo }}</p>
+        First variant:
+        <ul>
+            <li v-for="name in names">{{ name }}</li>
+        </ul>
+
+        Second variant:
+        <ul>
+            <li v-for="name in names" v-text="name"></li>
+        </ul>
+
+        <input type="text" id="input">
+        <button id="button">Add name</button>
+
+        <p>My links:</p>
+        <div v-for="link in urls">
+            <a :href="link">{{ link }}</a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        let app = new Vue({
+            el: '#root',
+            data: {
+                foo: 'bar',
+                names: ['John', 'Fred', 'Bill', 'Mary'],
+                urls: ['http://google.com', 'http://facebook.com']
+            }
+        });
+
+        document.querySelector('#button').addEventListener('click', () => {
+            let name = document.querySelector('#input').value;
+            app.names.push(name.value);
+            name.value = '';
+        });
+        
+        Vue.config.devtools = true;
+    </script>
+</body>

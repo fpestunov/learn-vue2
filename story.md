@@ -23,3 +23,14 @@ https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanh
 Экземпляр доступен в консоли с именем `$vm0`. Присвоим новое значениие `$vm0.message = 'I have been changed'`
 
 Это и есть двухстороннее связываение - меняем источник данных - меняется везде в отображениях. Меняем в отображениях, меняется и источник данных.
+
+## 3. Lists
+
+In real life, we're often working with arrays, rather than strings. In this episode, you'll learn how to use the v-for directive to filter through a list of items and render them on the page. We'll also continue our review of reactivity, in the process.
+
+Проверим реактивность:
+- в консоле наберем `app.names.push('Susan')`, работает;
+
+Теперь давайте сделаем добавление в список через элементы формы.
+
+Сделать вывод адресов сайтов вместе с ссылками.
