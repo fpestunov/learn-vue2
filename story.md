@@ -53,3 +53,15 @@ We haven't yet reviewed attribute binding in Vue. This is a key concept to under
 `v-bind:title` и `:title`, выбираем последнее.
 
 Поставим через консоль другое значение `app.className = 'color-blue'`.
+
+Можно устанавливать значения через булевые переменные. Сделаем кнопку, цвет которой будет меняться через нажатия.
+
+## 6. The Need for Computed Properties
+
+Often, you'll find that a piece of data needs a bit of calculation, before it's rendered onto the page. In such instances, Vue's computed properties are exactly what you require.
+
+Работа с массивом через консоль:
+`app.tasks[0].completed = false`
+
+Домашнее задание - сделать список задач с кнопками и добавлением задач.
+
