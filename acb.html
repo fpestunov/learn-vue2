@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 5. Attribute and Class Binding</title>
+    <style>
+        .color-red { color: red; }
+        .color-blue { color: blue; }
+        .is-loading { color: #ffcc00; }
+         .wrapper { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+        <h2 :class="className">Attribute and Class Binding</h2>
+        <div class="wrapper"><button :title="title">Hover Over Me</button></div>
+        <div class="wrapper"><button :class="{'is-loading': isLoading }" @click="toggleClass">Toggle Me</button></div>
+        <div class="wrapper"><button :disabled="btnState" @click="changeState">{{ btnText }}</button></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script>
+        let app = new Vue({
+            el: '#root',
+            data: {
+                title: 'Now the title is ...',
+                className: 'color-red',
+                isLoading: false,
+                btnText: 'Disable Me',
+                btnState: false
+            },
+
+            methods: {
+                toggleClass() {
+                    this.isLoading = !this.isLoading;
+                },
+                changeState() {
+                    this.btnText = 'Disabled';
+                    this.btnState = true;
+
+                } 
+            }
+
+        });
+        
+        Vue.config.devtools = true;
+    </script>
+</body>
