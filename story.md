@@ -1,4 +1,4 @@
-#Learn Vue 2: Step By Step
+# Learn Vue 2: Step By Step
 
 Vue is easily one of the most exciting additions to the front-end world in many years. With its intuitive API, and the fact that it can be applied to any type of application, it's no wonder why folks have gravitated to it as much as they have.
 
@@ -64,4 +64,23 @@ Often, you'll find that a piece of data needs a bit of calculation, before it's 
 `app.tasks[0].completed = false`
 
 Домашнее задание - сделать список задач с кнопками и добавлением задач.
+https://jsfiddle.net/razvantirboaca/9aqsjj30/
+https://codepen.io/kingRayhan/full/MoLrXX/
+https://codepen.io/yusufkandemir/pen/EOxEQO
+http://jsfiddle.net/jmhozgww/
 
+## 7. Components 101
+
+Let's begin reviewing Vue components. You'll make heavy use of these, as you begin to harness all that Vue has to offer, so pay special attention to the next several episodes.
+
+```
+<ul>
+    <li>Go to the store</li>
+</ul>
+
+<!-- what is different? -->
+<task-list>
+    <task>Go to the store</task>
+</task-list>
+
+```
