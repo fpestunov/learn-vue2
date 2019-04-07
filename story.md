@@ -84,3 +84,11 @@ Let's begin reviewing Vue components. You'll make heavy use of these, as you beg
 </task-list>
 
 ```
+
+## 8. Components Within Components
+
+Not only can we create single components, but, of course, any component may further consist of child components. In this episode, let's review a basic example of that very thing.
+
+For multiline templates use \` instead '.
+
+Обязательно в шаблонах делаем корневой элемент, иначе будет ошибка в шаблоне.
