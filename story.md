@@ -138,4 +138,14 @@ https://packagecontrol.io/packages/Vuejs%20Snippets%20Airbnb
 
 slot - щель, щёлка - через нее идет передача данных в компоненты.
 
+## 11. Practical Component Exercise #3: Tabs
 
+Let's review one more practical component exercise, before moving on to new topics. Let's re-create the common tabs feature that you've seen on so many websites. This will give us a number of interesting techniques to review.
+
+`ul#tabs>li*3>a[href=#]` (Emmet should be installed)
+
+По ходу создания, смотрим в консоль:
+- `console.log(this.$children)`
+- `$vm0.$children.forEach(tab => console.log(tab.name))`
+
+`created()` - событие выполняется в момент создания компонента;

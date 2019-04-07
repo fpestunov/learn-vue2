@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Lesson 11. Practical Component Exercise #3: Tabs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <style>
+        body { padding-top: 40px }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h2>Practical Component Exercise #3: Tabs</h2>
+    </div>
+    
+    <div id="root" class="container">
+
+    <tabs>
+        <tab name="Pictures" :selected="true">
+            <h1>Content for Pictures tab.</h1>
+        </tab>
+
+        <tab name="Music">
+            <h1>Content for Music tab.</h1>
+        </tab>
+        
+        <tab name="Videos">
+            <h1>Content for Videos tab.</h1>
+        </tab>
+        
+        <tab name="Documents">
+            <h1>Content for Documents tab.</h1>
+        </tab>
+        
+    </tabs>
+
+    <!-- CLASSIC TABS
+        <ul id="tabs">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+
+        <div class="tab-panels">
+            
+        </div>
+    -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
