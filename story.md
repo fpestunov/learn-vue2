@@ -149,3 +149,9 @@ Let's review one more practical component exercise, before moving on to new topi
 - `$vm0.$children.forEach(tab => console.log(tab.name))`
 
 `created()` - событие выполняется в момент создания компонента;
+
+Рефакторинг.
+- Мы меняем пришедшие свойства, а это не хорошо. Создадим отдельное значение выбранной вкладки;
+- Добавим вывод текста вкладки, в зависимости от выбора: `<div v-show="isActive"><slot></slot></div>`;
+- Добавим в ссылках имена Табов, чтобы по ссылке открывался соответсвующий Таб.
+

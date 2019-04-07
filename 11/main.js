@@ -5,8 +5,8 @@ Vue.component('tabs', {
             <div class="tabs">
               <ul>
 
-                <li v-for="tab in tabs" :class="{ 'is-active': tab.selected }">
-                    <a href=# @click="selectTab(tab)">{{ tab.name }}</a>
+                <li v-for="tab in tabs" :class="{ 'is-active': tab.isActive }">
+                    <a :href="tab.href" @click="selectTab(tab)">{{ tab.name }}</a>
                 </li>
                 <!--
                 <li class="is-active"><a>Pictures</a></li>
@@ -37,9 +37,8 @@ Vue.component('tabs', {
 
     methods: {
         selectTab(selectedTab) {
-            // alert('selecting');
             this.tabs.forEach(tab => {
-                tab.selected = (tab.name == selectedTab.name);
+                tab.isActive = (tab.name == selectedTab.name);
             });
 
         }
@@ -54,8 +53,26 @@ Vue.component('tab', {
     },
 
     template: `
-        <div><slot></slot></div>
-    `
+        <div v-show="isActive"><slot></slot></div>
+    `,
+
+    data() {
+        return {
+            isActive: false
+        }
+    },
+
+    computed: {
+        href() {
+            // 'About me' => 'about-me'
+            return '#' + this.name.toLowerCase().replace(/ /g, '-');
+            // return 'foobar';
+        }
+    },
+
+    mounted() {
+        this.isActive = this.selected;
+    }
 });
 
 let app = new Vue({
