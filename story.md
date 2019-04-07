@@ -122,3 +122,20 @@ methods: {
 ```
 <button class="delete" aria-label="delete" @click="isVisible = false"></button>
 ```
+
+## 10. Practical Component Exercise #2: Modal
+
+Let's move on to our next practical component exercise. A traditional modal box provides some key learning points. In particular, we're going to learn how to communicate between components. What happens if one Vue instance or component needs to be notified when a particular action takes place? How might we broadcast such things?
+
+https://packagecontrol.io/packages/Vuejs%20Snippets%20Airbnb
+
+Какой подход к созданию компонентов?
+1. Делаем чистый HTML того, что желаем получить;
+2. Вырезаем и пишем `<modal></modal>`;
+3. Создаем в Vue компонент;
+
+А как сделать общение компонента с Vue instance?
+
+slot - щель, щёлка - через нее идет передача данных в компоненты.
+
+
