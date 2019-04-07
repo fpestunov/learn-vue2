@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Lesson 8. Practical Component Exercise #1: Message</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <style>
+        body { padding-top: 40px }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h2>Practical Component Exercise #1: Message</h2>
+    </div>
+    
+    <div id="root" class="container">
+            
+        <message title="Message" body="Colored message blocks, to emphasize part of your page"></message>
+        <message title="Menu" body="A simple menu, for any type of vertical navigation"></message>
+
+        <article class="message">
+          <div class="message-header">
+            <p>Hello World</p>
+            <button class="delete" aria-label="delete"></button>
+          </div>
+          <div class="message-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+          </div>
+        </article>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>

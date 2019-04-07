@@ -92,3 +92,33 @@ Not only can we create single components, but, of course, any component may furt
 For multiline templates use \` instead '.
 
 Обязательно в шаблонах делаем корневой элемент, иначе будет ошибка в шаблоне.
+
+## 9. Practical Component Exercise #1: Message
+
+Let's begin reviewing the process of creating an assortment of practical components for your own projects. We'll start with a simple one: convert Bulma's "message" component into a full-fledged Vue component with behavior.
+
+Bulma интересна тем, что у нее уже есть система компонентов, например, сообщения:
+https://bulma.io/documentation/components/
+
+Как дают имена компонентам:
+```
+<message>
+<airbus-message> // бизнес название
+```
+
+Как спрятать модальное окно? Первый вариант - написать скрытие элемента в стиле Jquery. Второй - используя состояния во Vue - `<article class="message" v-show="isVisible">`.
+
+А еще, всю конструкцию:
+```
+<button class="delete" aria-label="delete" @click="hideModal"></button>
+...
+methods: {
+    hideModal() {
+        this.isVisible = false;
+    }
+}
+```
+Можно заменить одной строчкой:
+```
+<button class="delete" aria-label="delete" @click="isVisible = false"></button>
+```
