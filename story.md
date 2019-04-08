@@ -196,3 +196,35 @@ So far, we've only reviewed default component slots. Or, in other words, "take t
 ## 15. Single-Use Components and Inline Templates
 
 Not every component needs to be generic and reusable. Sometimes, a single, view-specific component is exactly what the doctor ordered. In this episode, we'll review the basic concept, and then discuss when you might reach for the `inline-template` attribute to nest your template directly in your HTML file.
+
+## 16. Webpack and vue-cli
+
+Let's begin focusing on structure, and how you'll build actual applications with Vue. That means we're ready to learn both Webpack and vue-cli. I will warn you ahead of time: this can be a little confusing. But just stick with me, and we'll iron out all the kinks as best as we can.
+
+As an aside, if you use Laravel, you'll be happy to know that the framework offers some facilities to make this whole process even simpler. We'll review that soon.
+
+https://webpack.github.io/
+https://github.com/vuejs/vue-cli
+
+Как устроен отдельный Вуе-компонент (https://vue-loader.vuejs.org/ru/):
+- Шаблон;
+- Скрипт;
+- CSS;
+
+Приступим к установке:
+```
+npm install -g @vue/cli
+vue --version // -V
+npm install -g @vue/cli-init
+vue init webpack-simple hello-vue
+
+// В файле app.vue видим шаблон, скрипт и стили.
+
+npm install
+npm run dev
+```
+
+В файле `app.vue` видим шаблон, скрипт и стили.
+
+Добавляем компонент и проверяем работу.
+
