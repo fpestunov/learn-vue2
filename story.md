@@ -155,3 +155,13 @@ Let's review one more practical component exercise, before moving on to new topi
 - Добавим вывод текста вкладки, в зависимости от выбора: `<div v-show="isActive"><slot></slot></div>`;
 - Добавим в ссылках имена Табов, чтобы по ссылке открывался соответсвующий Таб.
 
+## 12. Component Communication Example #1: Custom Events
+
+Let's begin reviewing the options you have, when it comes to communication between Vue components. Or, in other words, how can one component notify another about a particular action or event that just took place?
+
+```
+<coupon v-on:applied="onCouponApplied"></coupon>
+
+// сокращенный вариант
+<coupon @applied="onCouponApplied"></coupon>
+```
