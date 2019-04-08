@@ -193,3 +193,6 @@ So far, we've only reviewed default component slots. Or, in other words, "take t
 <slot>Defaul content.</slot>
 ```
 
+## 15. Single-Use Components and Inline Templates
+
+Not every component needs to be generic and reusable. Sometimes, a single, view-specific component is exactly what the doctor ordered. In this episode, we'll review the basic concept, and then discuss when you might reach for the `inline-template` attribute to nest your template directly in your HTML file.

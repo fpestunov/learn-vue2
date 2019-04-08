@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Lesson 15. Single-Use Components and Inline Templates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <style>
+        body { padding-top: 40px }
+    </style>
+</head>
+<body>
+
+    <div id="root" class="container">
+        <progress-view inline-template>
+            <div>
+                <h1>Your Progress Is {{ completionRate }}%</h1>
+                <p><button @click="completionRate += 10">Update Completion Rate</button></p>
+            </div>
+        </progress-view>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
