@@ -228,3 +228,21 @@ npm run dev
 
 Добавляем компонент и проверяем работу.
 
+## 16. Hot Module Replacement
+
+Hot module replacement is incredibly cool. Yes, it will automatically refresh the page each time you change a component; however, what's particularly neat is that the state for all components will remain unchanged. Think of it like "Live Reload" for every single component in your application. In this video, I'll quickly demonstrate how it works.
+
+Что означает ключ `--hot`?
+```
+"dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+```
+
+Это - Hot Module Replacement. Фокус в том, что меняя компоненты и скрипты, страница перезагружается с внесенными изменениями, но значения и состояния остаются те же.
+```
+    <h2>The Count Is: {{ count }}</h2>
+    <h2>Count: {{ count }}</h2>
+    <p>
+        <button @click="count += 1">Increment</button>
+        <button @click="count += 10">Increment</button>
+    </p>
+```
