@@ -228,7 +228,7 @@ npm run dev
 
 Добавляем компонент и проверяем работу.
 
-## 16. Hot Module Replacement
+## 17. Hot Module Replacement
 
 Hot module replacement is incredibly cool. Yes, it will automatically refresh the page each time you change a component; however, what's particularly neat is that the state for all components will remain unchanged. Think of it like "Live Reload" for every single component in your application. In this video, I'll quickly demonstrate how it works.
 
@@ -246,3 +246,27 @@ Hot module replacement is incredibly cool. Yes, it will automatically refresh th
         <button @click="count += 10">Increment</button>
     </p>
 ```
+
+18. Vue Ajax Requests With Axios
+
+Vue doesn't provide any specific AJAX functionality out of the box. Instead, you have the entire spectrum of the JavaScript community to pull from. Maybe you're already using jQuery? If so, `$.ajax` will do the trick. Want a native option? Consider the fetch API (just don't forget to include a polyfill for older browsers). Or, maybe a general purpose library will do the trick? In this lesson, we'll review *Axios*: a clean and simple HTTP request API that you can be integrated into any project within seconds.
+
+- Устанавливаем Ларавел. Это будет Бэкэндом;
+- В Ларавел есть папка `/resources`, в которой настраиваются все фронт-энд модули, но мы все сделаем через `/public`;
+- начинаем работу с файлом `/public/js/app.js`;
+- создаем роут `/skills`;
+- какие у нас есть варианты для ajax? - Vanila JS, Jquery, Axios!
+- https://github.com/mzabriskie/axios
+- сначала возвращаем сырой ответ;
+- теперь сделаем в vue `data: { skills: [] }` и будем возвращать результат запроса туда;
+- выведем на страницу массив, обходя Blade `@{{ skills }}`;
+```
+<li v-for="skill in skills">@{{ skill }}</li>
+// or...
+<li v-for="skill in skills" v-test="skill"></li>
+```
+
+Еще вопрос - использовать Vue Resources или Axios?
+Сегодня предпочтительнее использовать Axios.
+
+Но мы перепишем заключительный код, используя прототипы.
