@@ -165,3 +165,7 @@ Let's begin reviewing the options you have, when it comes to communication betwe
 // сокращенный вариант
 <coupon @applied="onCouponApplied"></coupon>
 ```
+
+## 13. Component Communication Example #2: Event Dispatcher
+
+The next choice you have, to allow for communication between Vue components, is creating your own event dispatcher. Don't worry: this is much easier than it sounds, due to the fact that every Vue instance already implements the necessary interface!
