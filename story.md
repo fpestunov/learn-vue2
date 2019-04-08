@@ -169,3 +169,7 @@ Let's begin reviewing the options you have, when it comes to communication betwe
 ## 13. Component Communication Example #2: Event Dispatcher
 
 The next choice you have, to allow for communication between Vue components, is creating your own event dispatcher. Don't worry: this is much easier than it sounds, due to the fact that every Vue instance already implements the necessary interface!
+
+## 14. Named Slots in a Nutshell
+
+So far, we've only reviewed default component slots. Or, in other words, "take this bit of content, and insert it right there, as designated by the `slot` tags. But what about when we require more control? A modal component is a perfect example of this. If you want to slot a header section in one place, and a footer section in another, named slots are exactly what you need.
