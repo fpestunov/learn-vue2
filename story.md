@@ -173,3 +173,23 @@ The next choice you have, to allow for communication between Vue components, is 
 ## 14. Named Slots in a Nutshell
 
 So far, we've only reviewed default component slots. Or, in other words, "take this bit of content, and insert it right there, as designated by the `slot` tags. But what about when we require more control? A modal component is a perfect example of this. If you want to slot a header section in one place, and a footer section in another, named slots are exactly what you need.
+
+Можно использовать станадртные теги и они на выходе остаются такими:
+```
+<modal>
+    <h1 slot="title">Modal title from slot</h1>
+</modal>
+```
+
+Можно использовать станадртные теги Vue и они на выходе становятся "пустыми":
+```
+<modal>
+    <template slot="title">Modal title from slot</template>
+</modal>
+```
+
+Это значение в шаблоне по умолчанию:
+```
+<slot>Defaul content.</slot>
+```
+

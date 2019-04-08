@@ -14,9 +14,16 @@
     <div id="root" class="container">
         <h2>Named Slots in a Nutshell</h2>
         <hr>
-        <modal>Modal title from slot</modal>
+        <modal>
+            <template slot="title">Modal title from slot</template>
+            <!-- для последнего элемента не обязательно создавать 'slot' -->
+            So far, we've only reviewed default component slots. Or, in other words, "take this bit of content, and insert it right there, as designated by the slot tags. But what about when we require more control? A modal component is a perfect example of this. If you want to slot a header section in one place, and a footer section in another, named slots are exactly what you need.
+            <template slot="footer">
+                <a class="button is-primary">Save changes</a>
+                <a class="button">Cancel</a>                
+            </template>
+        </modal>
         
-        <h1 v-if="couponApplied">You used a coupon!</h1>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
