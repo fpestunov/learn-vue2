@@ -270,3 +270,43 @@ Vue doesn't provide any specific AJAX functionality out of the box. Instead, you
 Сегодня предпочтительнее использовать Axios.
 
 Но мы перепишем заключительный код, используя прототипы.
+
+## 19. Object-Oriented Forms: Part 1
+
+Let's review some techniques that we might implement to DRY up our form interactions. If you've ever noticed yourself writing the same exact code, over and over, for each form, then extracting a Form class may be exactly what you need. Let's get started with part one of this two-part series.
+
+Подготавливаем основу:
+- устанавливаем Ларавел;
+- `php artisan make:controller ProjectsController --resource`;
+- `php artisan make:model Project`;
+- `public\js\app.js`;
+- создаем вьюшки;
+- `php artisan make:migration create_projects_table` и добавляем поля;
+- создаем БД и прописываем её в `.env`;
+- проверяем, работает!
+
+При этом активно работаем с консолью, вкладка *Network*, смотрим какие ошибки генерирует Ларавер, какой код ответа сервера и т.д. Работа с JS - это *XHR*.
+
+Теперь поработаем с валидацией:
+- `required` не работает в Сафари и др.;
+- смотрим, что вернет Ларавел, если не ввести одно поле... Да, вот - "message: "The given data was invalid.", errors: {description: ["The description field is required."]}";
+- итак, алгоритм следующий, берем ответ Ларавела и показываем пользователю;
+- To quickly disable tokens (for this example, not production), comment out:
+```
+\App\Http\Middleware\VerifyCsrfToken::class, 
+in app/Http/Kernel.php
+```
+- когда высветилась ошибка валидации и начинаем вводить, то она должна "уходить":
+```
+ <span class="help is-danger" v-text="errors.get('description')" @keydown="errors.clear('description')"></span>
+```
+- но если у нас много полей ввода? Везде не поставишь! Можно поставить на форме:
+```
+<form method="POST" action="/projects" @submit.prevent="onSubmit" @keydown="errors.clear($event.target.name)">
+```
+- теперь отключим вывод подсказок ошибок в форме:
+```
+has(field) {
+    return this.errors.hasOwnProperty(field);
+}
+```
